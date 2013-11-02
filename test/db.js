@@ -1,5 +1,17 @@
 'use strict';
+var request = require('supertest'),
+  chai = require('chai'),
+  expect = chai.expect,
+  riaktor = require('../lib/riaktor');
 
-// write a test saying we expect the response from db.ping to equal the string 'OK'
-// have this work for both the db connection
-// and use nock for the other cases
+var db = Object.create(riaktor);
+db.init_config('localhost', '8098');
+
+describe('riaktor', function() {
+  it("should return OK on a successful database ping", function (done) {
+    db.ping(function(res) {
+      expect(res).to.equal('OK');
+      done();
+    });
+  });
+});

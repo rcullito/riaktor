@@ -1,12 +1,10 @@
 'use strict';
-
+//TODO set up code coverage output
 module.exports = function(grunt) {
   
   require('load-grunt-tasks')(grunt);
   
   grunt.initConfig({
-
-
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -17,14 +15,18 @@ module.exports = function(grunt) {
         'test*',
       ]
     },
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec'
+        },
+        src: ['test/*.js']
+      }
+    }
   });
 
   grunt.registerTask('default', [
-    'jshint'
+    'jshint',
+    'mochaTest',
   ]);
-  // // A very basic default task.
-  // grunt.registerTask('default', 'Log some stuff.', function() {
-  //   grunt.log.write('Logging some stuff...').ok();
-  // });
-
 };
