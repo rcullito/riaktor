@@ -10,7 +10,8 @@
   "devDependencies": {
     "mocha": "1.13.0",
     "nock": "0.22.1",
-    "grunt":"~0.4.1",
-    "grunt-contrib-jshint": "~0.6.0"
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "load-grunt-tasks": "~0.2.0"
   }
 }
