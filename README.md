@@ -1,4 +1,4 @@
-<img src="riaktor.png" alt="the riaktor" width="300px;"/>
+<img src="images/riaktor.png" alt="the riaktor" width="300px;"/>
 
 ###TODO
 
