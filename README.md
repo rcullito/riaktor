@@ -9,3 +9,5 @@
   look at error handling in brainspawn's superagent calls.
 
   allow streaming version for bucket and keys, take advantage of bookmarked rest api page
+
+  look into what appropriate jshint options should be in .jshintrc
