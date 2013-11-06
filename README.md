@@ -7,3 +7,5 @@
   use config npm module to manage above test suite, whether http is enabled or not essentially.
 
   look at error handling in brainspawn's superagent calls.
+
+  allow streaming version for bucket and keys, take advantage of bookmarked rest api page
