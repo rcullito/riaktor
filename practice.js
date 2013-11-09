@@ -20,8 +20,11 @@ db.get_keys_in_bucket('emails', function(res) {
   console.log(res);
 });
 
-db.get_value_from_key('emails', 'VdLltN0J0c7WjsQygJDp3Q44FUf', function(res) {
-  console.log(res);
+// make note about whether you are retrieving body 
+// or text based off the content type of how the value for 
+// a given key was stored
+db.get_value_from_key('people', 'rculliton', function(res) {
+  console.log(res.body);
 });
 
 
