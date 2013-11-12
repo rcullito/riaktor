@@ -1,6 +1,6 @@
 <img src="images/riaktor.png" alt="the riaktor" width="300px;"/>
 
-# Riaktor
+# Riaktor [![Build Status](https://travis-ci.org/wampum/riaktor.png?branch=master)](https://travis-ci.org/wampum/riaktor)
 
 ### a lightweight wrapper for riak built with superagent.
 
