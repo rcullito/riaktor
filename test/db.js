@@ -32,8 +32,18 @@ describe('a riak key and value', function() {
     nock('http://localhost:8098')
       .post('/riak/people/wizard')
       .reply(204, { 'content-type': 'application/json' });
-
     db.post_value_to_key('people', 'wizard', wizard_data, function(res) {
+      expect(res.statusCode).to.equal(204);
+      done();
+    });
+  });
+  it("should return a 204 when updated", function (done) {
+    var wizard_data = {email: 'radagast@gmail.com'};
+    nock('http://localhost:8098')
+      .put('/riak/people/wizard')
+      .reply(204, { 'content-type': 'application/json' });
+
+    db.update_value_in_key('people', 'wizard', wizard_data, function(res) {
       expect(res.statusCode).to.equal(204);
       done();
     });
