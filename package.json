@@ -1,6 +1,6 @@
 {
   "name": "riaktor",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "a minimalist node.js wrapper for riak built with superagent",
   "main": "lib/Riaktor.js",
   "dependencies": {

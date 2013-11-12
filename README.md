@@ -49,6 +49,13 @@ Key Operations
     });
     => 204
 
+    var new_data = {email: 'clairebelle@wampum.io'};
+
+    db.update_value_in_key('people', 'cbelle', new_data, function(res) {
+      console.log(res.status);
+    });
+    => 204
+
     db.delete_value_in_key('people', 'cbelle', function(res) {
       console.log(res.statusCode);
     });
