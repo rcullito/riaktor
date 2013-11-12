@@ -4,6 +4,8 @@
 
 Riaktor is a lightweight wrapper for riak built with superagent.
 
+Initialize
+
     var riaktor = require('riaktor');
 
     var db = Object.create(riaktor);
@@ -13,10 +15,15 @@ Riaktor is a lightweight wrapper for riak built with superagent.
     db.about_my_config();
     => I'm riaktor and I am running on http://localhost:8098
 
+
+Check health
+
     db.ping(function(res) {
       console.log(res);
     });
     => OK
+
+Bucket Operations
 
     db.get_buckets(function(res) {
       console.log(res);
@@ -27,6 +34,8 @@ Riaktor is a lightweight wrapper for riak built with superagent.
       console.log(res);
     });
     => ['key_name_1', 'key_name_2']
+
+Key Operations
 
     db.get_value_from_key('people', 'rculliton', function(res) {
       console.log(res.body);

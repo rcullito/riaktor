@@ -26,15 +26,23 @@ describe('a riak key and value', function() {
       done();
     });
   });
-
   it("should return a 204 when posted", function (done) {
     var wizard_data = {email: 'gandalf@gmail.com'};
+
+    nock('http://localhost:8098')
+      .post('/riak/people/wizard')
+      .reply(204, { 'content-type': 'application/json' });
+
     db.post_value_to_key('people', 'wizard', wizard_data, function(res) {
       expect(res.statusCode).to.equal(204);
       done();
     });
   });
   it('should return a 204 or 404 when deleted', function (done) {
+    nock('http://localhost:8098')
+      .delete('/riak/people/wizard')
+      .reply(204, { 'content-type': 'application/json' });
+
     db.delete_value_in_key('people', 'wizard', function(res) {
       expect([204, 404]).to.include(res.statusCode);
       done();
