@@ -30,7 +30,11 @@ db.get_value_from_key('people', 'rculliton', function(res) {
 var cbelle_data = {email: 'claire@wampum.io'};
 
 db.post_value_to_key('people', 'cbelle', cbelle_data, function(res) {
-  console.log(res);
+  console.log(res.status);
+});
+
+db.delete_value_in_key('people', 'cbelle', function(res) {
+  console.log(res.statusCode);
 });
 
 

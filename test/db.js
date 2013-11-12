@@ -15,8 +15,8 @@ var db = Object.create(riaktor);
 db.init_config('localhost', '8098');
 
 
-describe('riaktor', function() {
-  it("should return correct object for a given key", function (done) {
+describe('a riak key and value', function() {
+  it("should return object data for a given key", function (done) {
   nock('http://localhost:8098')
     .get('/riak/people/rculliton')
     .reply(200, '{ "email":"rob@wampum.io"}', { 'content-type': 'application/json' });
@@ -27,10 +27,16 @@ describe('riaktor', function() {
     });
   });
 
-  it("should return a 204 on a normal post for a given key", function (done) {
+  it("should return a 204 when posted", function (done) {
     var wizard_data = {email: 'gandalf@gmail.com'};
     db.post_value_to_key('people', 'wizard', wizard_data, function(res) {
       expect(res.statusCode).to.equal(204);
+      done();
+    });
+  });
+  it('should return a 204 or 404 when deleted', function (done) {
+    db.delete_value_in_key('people', 'wizard', function(res) {
+      expect([204, 404]).to.include(res.statusCode);
       done();
     });
   });
