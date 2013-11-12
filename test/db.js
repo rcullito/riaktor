@@ -26,4 +26,13 @@ describe('riaktor', function() {
       done();
     });
   });
+
+  it("should return a 204 on a normal post for a given key", function (done) {
+    var wizard_data = {email: 'gandalf@gmail.com'};
+    db.post_value_to_key('people', 'wizard', wizard_data, function(res) {
+      expect(res.statusCode).to.equal(204);
+      done();
+    });
+  });
+  // delete in next post
 });
