@@ -16,7 +16,7 @@ Initialize
     => I'm riaktor and I am running on http://localhost:8098
 
 
-Check health
+Check Health
 
     db.ping(function(res) {
       console.log(res);
