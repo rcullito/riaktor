@@ -2,7 +2,7 @@
 
 # Riaktor
 
-Riaktor is a lightweight wrapper for riak built with superagent.
+### a lightweight wrapper for riak built with superagent.
 
 Initialize
 
