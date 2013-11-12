@@ -1,4 +1,4 @@
-<img src="images/riaktor.png" alt="the riaktor" width="300px;"/>
+<img src="http://4.bp.blogspot.com/_TaxA4M5bjX8/S-Hg34oB_sI/AAAAAAAAAEI/_BMipkv-0w8/s640/4a60d7e53af5d,Arc-Reactor-RELOADED.png" alt="the riaktor" width="300px;"/>
 
 # Riaktor [![Build Status](https://travis-ci.org/wampum/riaktor.png?branch=master)](https://travis-ci.org/wampum/riaktor)
 
