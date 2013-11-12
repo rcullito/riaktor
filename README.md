@@ -1,17 +1,46 @@
 <img src="images/riaktor.png" alt="the riaktor" width="300px;"/>
 
-###TODO
+# Riaktor
 
-  integrate with nock for when riak isn't running
+Riaktor is a lightweight wrapper for riak built with superagent.
 
-  use config npm module to manage above test suite, whether http is enabled or not essentially.
+    var riaktor = require('riaktor');
 
-  look at error handling in brainspawn's superagent calls.
+    var db = Object.create(riaktor);
 
-  allow streaming version for bucket and keys, take advantage of bookmarked rest api page
+    db.init_config('localhost', '8098');
 
-  look into what appropriate jshint options should be in .jshintrc
+    db.about_my_config();
+    => I'm riaktor and I am running on http://localhost:8098
 
-  upgrade version of mocha to get better diff
+    db.ping(function(res) {
+      console.log(res);
+    });
+    => OK
 
-  when making nock requests you have to specify the content type as application json
+    db.get_buckets(function(res) {
+      console.log(res);
+    });
+    => ['bucket_name_1', 'bucket_name_2']
+
+    db.get_keys_in_bucket('people', function(res) {
+      console.log(res);
+    });
+    => ['key_name_1', 'key_name_2']
+
+    db.get_value_from_key('people', 'rculliton', function(res) {
+      console.log(res.body);
+    });
+    => {example_key_1: 'example_value_1'}
+
+    var data = {email: 'claire@wampum.io'};
+
+    db.post_value_to_key('people', 'cbelle', data, function(res) {
+      console.log(res.status);
+    });
+    => 204
+
+    db.delete_value_in_key('people', 'cbelle', function(res) {
+      console.log(res.statusCode);
+    });
+    => 204
